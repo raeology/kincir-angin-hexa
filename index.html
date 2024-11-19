@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kincir Angin Sederhana - HEXA</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background: radial-gradient(circle at center, #74ebd5, #9face6);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Particles Background */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #4caf50;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
+        }
+
+        /* Header Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(120deg, #4caf50, #2e7d32);
+            clip-path: ellipse(100% 75% at center top);
+        }
+        header h1 {
+            font-size: 3.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        header .btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+        }
+        header .btn:hover {
+            background: #45a049;
+            box-shadow: 0 10px 20px rgba(0, 255, 0, 0.4);
+            transform: scale(1.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 50px 10%;
+            margin: 50px auto;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+        section h2 {
+            color: #4caf50;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 30%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            .gallery img {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            .gallery img {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+
+    <nav>
+        <a href="#kelompok">Kelompok</a>
+        <a href="#alat-bahan">Alat & Bahan</a>
+        <a href="#desain">Desain Proyek</a>
+        <a href="#tugas">Tugas Anggota</a>
+        <a href="#jadwal">Jadwal Kegiatan</a>
+        <a href="#dokumentasi">Dokumentasi</a>
+    </nav>
+
+    <header>
+        <h1>Kincir Angin Sederhana</h1>
+        <p>Proyek Energi Terbarukan oleh Kelompok HEXA</p>
+        <button class="btn" onclick="scrollToSection('kelompok')">Mulai Eksplorasi</button>
+    </header>
+
+    <section id="kelompok">
+        <h2>Kelompok HEXA</h2>
+
+            <h4>1. Alif Fahreza Bintang R</h4>
+            <h4>2. Fernando Bryan Axnes Casela</h4>
+            <h4>3. Maydiera Senja</h4>
+            <h4>4. M Is Alfiansyah</h4>
+            <h4>5. M Yusuf Adriyansyah</h4>
+            <h4>6. M Rasya Arkhan</h4>
+    </section>
+
+    <section id="alat-bahan">
+        <h2>Alat dan Bahan</h2>
+            <h4>Gunting atau pemotong kawat</h4>
+            <h4>Obeng</h4>
+            <h4>Tang</h4>
+            <h4>Dynamo Mini</h4>
+            <h4>Kipas Kincir Angin</h4>
+            <h4>LED Kecil</h4>
+            <h4>Kabel listrik</h4>
+            <h4>Kerangka atau tiang kincir angin</h4>
+            <h4>Lem tembak</h4>
+    </section>
+
+    <section id="desain">
+        <h2>Desain Proyek</h2>
+        <p>iki isien foto1</p>
+    </section>
+
+    <section id="tugas">
+        <h2>Tugas Anggota Kelompok</h2>
+        <a href="https://docs.google.com/spreadsheets/d/1GEB5oKQhUZZ8DM3DFZhyKXVQz7TKpi7vAXhr7CdGpGQ/edit?usp=sharing" target="_blank">Lihat Tugas Anggota</a>
+    </section>
+
+    <section id="jadwal">
+        <h2>Jadwal Kegiatan</h2>
+        <a href="https://docs.google.com/spreadsheets/d/1GEB5oKQhUZZ8DM3DFZhyKXVQz7TKpi7vAXhr7CdGpGQ/edit?usp=sharing" target="_blank">Lihat Jadwal Kegiatan</a>
+    </section>
+
+    <section id="dokumentasi">
+        <h2>Dokumentasi</h2>
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Persiapan">
+            <img src="foto2.jpg" alt="Proses Pembuatan">
+            <img src="foto3.jpg" alt="Pengujian">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Kelompok HEXA | Semua Hak Dilindungi</p>
+    </footer>
+
+    <script>
+        // Particles Background
+        const canvas = document.querySelector('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = Array(150).fill().map(() => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 4,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2,
+        }));
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p) => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = '#ffffff';
+                ctx.fill();
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx = -p.vx;
+                if (p.y < 0 || p.y > canvas.height) p.vy = -p.vy;
+            });
+            requestAnimationFrame(drawParticles);
+        }
+        drawParticles();
+    </script>
+</body>
+</html>
